@@ -1,0 +1,12 @@
+server:
+  port: 8008
+spring:
+  application:
+    name: microservice-consumer-with-feign
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:password123@localhost:8001/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
